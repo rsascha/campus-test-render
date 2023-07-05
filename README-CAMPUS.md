@@ -39,3 +39,23 @@ server.headersTimeout = 120 * 1000;
 Publish your branch and create a PR at Github.
 
 You will receive an eMail with the new URL for your PR Preview.
+
+---
+
+Switch to ECMAScript modules (ESM) in Node.js
+
+Add `"type": "module",` to your `package.json`.
+
+Change `const express = require("express");` to `import express from "express";` in your `app.js`.
+
+---
+
+Install a configure PGAdmin:
+
+```sh
+brew install pgadmin4
+```
+
+Hostname is <Hostname>.frankfurt-postgres.render.com
+
+---
