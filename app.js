@@ -7,16 +7,19 @@ const pgDatabase = process.env["PG_DATABASE"];
 const pgUser = process.env["PG_USERNAME"];
 const pgPassword = process.env["PG_PASSWORD"];
 const pgSsl = process.env["PG_SSL"] === "true";
+const connectionString = process.env["CONNECTION_STRING"];
 
 const { Client } = pg;
-const client = new Client({
-  host: pgHostname,
-  port: pgPort,
-  database: pgDatabase,
-  user: pgUser,
-  password: pgPassword,
-  ssl: true,
-});
+// const client = new Client({
+//   host: pgHostname,
+//   port: pgPort,
+//   database: pgDatabase,
+//   user: pgUser,
+//   password: pgPassword,
+//   ssl: pgSsl,
+// });
+
+const client = new Client({ connectionString, ssl: pgSsl });
 
 const app = express();
 const port = process.env.PORT || 3001;
