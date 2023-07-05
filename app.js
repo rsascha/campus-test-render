@@ -19,7 +19,10 @@ const { Client } = pg;
 //   ssl: pgSsl,
 // });
 
-const client = new Client({ connectionString, ssl: pgSsl });
+const client = new Client({
+  connectionString,
+  ssl: { rejectUnauthorized: false },
+});
 
 const app = express();
 const port = process.env.PORT || 3001;
