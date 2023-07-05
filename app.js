@@ -6,6 +6,7 @@ const pgPort = process.env["PG_PORT"];
 const pgDatabase = process.env["PG_DATABASE"];
 const pgUser = process.env["PG_USERNAME"];
 const pgPassword = process.env["PG_PASSWORD"];
+const pgSsl = process.env["PG_SSL"] === "true";
 
 const { Client } = pg;
 const client = new Client({
